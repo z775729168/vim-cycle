@@ -9,62 +9,13 @@ let s:options = {}
 
 let s:options['global'] = [
   \ ['==', '!='],
-  \ ['_', '-'],
-  \ [' + ', ' - '],
-  \ ['-=', '+='],
   \ ['&&', '||'],
   \ ['and', 'or'],
-  \ ['if', 'unless'],
   \ ['true', 'false'],
   \ ['YES', 'NO'],
   \ ['yes', 'no'],
-  \ ['on', 'off'],
-  \ ['running', 'stopped'],
-  \ ['first', 'last'],
-  \ ['else', 'else if'],
 \]
 
-" css/sass/javascript/html
-let s:options['global'] = s:options['global'] + [
-  \ ['div', 'p', 'span'],
-  \ ['max', 'min'],
-  \ ['ul', 'ol'],
-  \ ['class', 'id'],
-  \ ['px', '%', 'em'],
-  \ ['left', 'right'],
-  \ ['top', 'bottom'],
-  \ ['margin', 'padding'],
-  \ ['height', 'width'],
-  \ ['absolute', 'relative'],
-  \ ['h1', 'h2', 'h3'],
-  \ ['png', 'jpg', 'gif'],
-  \ ['linear', 'radial'],
-  \ ['horizontal', 'vertical'],
-  \ ['show', 'hide'],
-  \ ['mouseover', 'mouseout'],
-  \ ['mouseenter', 'mouseleave'],
-  \ ['add', 'remove'],
-  \ ['up', 'down'],
-  \ ['before', 'after'],
-  \ ['text', 'html'],
-  \ ['slow', 'fast'],
-  \ ['small', 'large'],
-  \ ['even', 'odd'],
-  \ ['inside', 'outside'],
-  \ ['push', 'pull'],
-\]
-
-" ruby/eruby
-let s:options['global'] = s:options['global'] + [
-  \ ['include', 'require'],
-  \ ['Time', 'Date'],
-  \ ['present', 'blank'],
-  \ ['while', 'until'],
-  \ ['only', 'except'],
-  \ ['create', 'update'],
-  \ ['new', 'edit'],
-  \ ['get', 'post', 'put', 'patch']
-\]
 
 " Takes one or two arguments:
 "
@@ -212,7 +163,6 @@ endfunction
 
 " language specific overrides:
 call AddCycleGroup('ruby', ['class', 'module'])
-call AddCycleGroup(['ruby', 'eruby', 'perl'], ['else', 'elsif'])
 call AddCycleGroup('python', ['else', 'elif'])
 
 " Swift
@@ -228,4 +178,3 @@ if !exists("g:cycle_no_mappings") || !g:cycle_no_mappings
   nmap  <C-A>     <Plug>CycleNext
   nmap  <C-X>     <Plug>CyclePrevious
 endif
-
