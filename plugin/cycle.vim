@@ -162,14 +162,10 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " language specific overrides:
-call AddCycleGroup('ruby', ['class', 'module'])
 call AddCycleGroup('python', ['else', 'elif'])
+call AddCycleGroup('python', ['True', 'False'])
 
 " Swift
-call AddCycleGroup('swift', ['let', 'var'])
-call AddCycleGroup('swift', ['open', 'public', 'internal', 'fileprivate', 'private'])
-call AddCycleGroup('swift', ['class', 'struct', 'enum', 'protocol', 'extension'])
-call AddCycleGroup('swift', ['set', 'get'])
 
 nnoremap <silent> <Plug>CycleNext     :<C-U>call <SID>Cycle(1)<CR>
 nnoremap <silent> <Plug>CyclePrevious :<C-U>call <SID>Cycle(-1)<CR>
